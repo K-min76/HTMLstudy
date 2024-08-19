@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><!-- *{} 모두 표시-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        main, section, article, div {
+            border:2px solid #000;
+        }
+        main {
+            max-width: 600px;
+            margin: 0;
+            background-color: green;
+            height: 1500px;
+        }
+        section {
+            margin: 10px;
+            background-color: yellow;
+        }
+        article {
+            padding: 20px;
+            background-color: white;
+        }
+        div {
+            background-color: rgb(220, 25, 238);
+        }
+        div.abs {
+            position: absolute;
+            background-color: chocolate;
+            left: 20px;
+            top: 20px;
+        }
+        div.relative {
+            position: relative;
+        }
+        div.fixed {
+            left: 20;
+            position: fixed;
+            bottom: 100px;
+        }
+        div.sticky {
+            position: sticky;
+            bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+    <main>main
+        <section>section
+            <article>article
+                <div>Hello World</div>
+                <div class="abs">ABC</div>
+                <div class="relative">relative
+                    <div class="abs">ABC2</div>
+                </div>
+                <!-- fixed 고정된 곳에서 따라온다.-->
+                <div class="fixed">fiexd</div>
+                <!--fixed처럼 따라오는 기능-->
+                <div class="sticky">감a</div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

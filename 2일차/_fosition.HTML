@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><!-- *{} 모두 표시-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        main, section, article, div {
+            border:2px solid #000;
+        }
+        main {
+            max-width: 600px;
+            margin: 0;
+            background-color: green;
+        }
+        section {
+            margin: 10px;
+            background-color: yellow;
+        }
+        article {
+            padding: 20px;
+            background-color: white;
+        }
+        div {
+            background-color: rgb(220, 25, 238);
+        }
+        div.abs {
+            position: absolute;
+            background-color: chocolate;
+            left: 20px;
+            top: 20px;
+        }
+        div.relative {
+            position: relative;
+        }
+    </style>
+</head>
+<!-- <body>
+시멘틱 태그 설명
+ 머릿말 heaer 혹은 top 화면의 부분을 담당
+ 회사 로고 가 대표적으로 들어간다.
+ <header>
+    <div>
+    
+    </div>
+</header>
+--네비게이션 약자, 자주 가는 리스트를 보여주는 공간.
+<nav>
+</nav>
+<main>
+화면을 소개하는 공간
+<section>메인의 일부를 공개하는 
+</main>
+</body>-->
+<!--<footer> 제일 맨 아래 -->
+<footer></footer>
+<body>
+    <main>main
+        <section>section
+            <article>article
+                <div>Hello World</div>
+                <div class="abs">ABC</div>
+                <div class="relative">relative
+                    <div class="abs">ABC2</div>
+                </div>
+                
+            </article>
+        </section>
+    </main>
+</body>
+</html>
