@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul > li:nth-child(5) {
+            background-color: yellow;
+        }
+        ul > li:nth-child(3n) {
+            background-color: rgb(47, 167, 31);
+        }
+        ul > li:nth-child(3n+1) {
+            background-color: red;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        tr, td {
+            border: 1px solid #000;
+        }
+        td {
+            padding: 50px;
+            
+        }
+        table > tr > td:nth-child(2) {
+            background-color: chartreuse;
+        }
+        tr:nth-child(2n+1) > td:nth-child(2n+1) {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>사과</li>
+        <li>바나나</li>
+        <li>멜론</li>
+        <li>사과</li>
+        <li>바나나</li>
+        <li>멜론</li>
+        <li>사과</li>
+        <li>바나나</li>
+        <li>멜론</li>
+        <li>사과</li>
+        <li>바나나</li>
+        <li>멜론</li>
+        <li>사과</li>
+        <li>바나나</li>
+        <li>멜론</li>
+    </ul>
+    <table class="table">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+    </table>
+</body>
+</html>
