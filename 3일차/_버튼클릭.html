@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 만들기</title>
+    <style>
+        input:hover {
+            font-size: 16px;
+            color: red;
+            border: 1px solid gray;
+            display: inline;
+        }
+        
+        .image {
+            display: none;
+            width: 200px;
+            height: 200px;
+            border: 1px black;
+        }
+        .tree01 {
+            background-image: url(../img/scroll.png);
+            background-size: contain;
+        }
+        .tree02 {
+            background-image: url(../img/scroll.png);
+            background-size: contain;
+
+        }
+        .tree03 {
+            background-image: url(/banana.png);
+            background-size: contain;
+
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <input type="button" value="이미지버튼1" onclick="img클릭('img1')">
+    <div class="image tree01"id="img1"></div>
+    <input type="button" value="이미지버튼2" onclick="img클릭('img2')">
+    <div class="image tree02"id="img2"></div>
+    <input type="button" value="이미지버튼3" onclick="img클릭('img3')">
+    <div class="image tree03"id="img3"></div>
+
+    <script>
+        function img클릭(imghjhh) {
+          let docu = document.getElementById(imghjhh)
+
+          if(docu.style.display == 'block') {
+            docu.style.display = 'none';
+          } else {
+            docu.style.display = 'block';
+          }
+
+          console.log(docu.style.display);
+        }
+    </script> 
+</body>
+</html>
