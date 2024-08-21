@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title><!--회전(도구)-->
+    <style>
+        .outline, .box {
+            
+            width: 60px;   
+            height: 60px;
+            
+
+        }
+        .outline {
+            margin-top: 20px;
+            border: 3px solid yellow;
+            
+        }
+        .box {
+            background-color: deepskyblue;/**/
+        }
+        .translate {
+            transform: translateX(50px); /*translate : 우측으로 이동*/
+        }
+        .translate1 {
+            transform: translateX(-50px);
+        }
+        .translate2 {
+            transform: translate(100px,0px);
+        }
+        .translate3 {
+            transform: translateY(50px);
+        }
+        .translate4 {
+            
+            transform: translateY(-50px);
+        }
+        .translate5 {
+            transform: translate(50px ,50px)
+        }
+        .scalc {
+            transform: scale(0.5);
+        }
+        .scalc1 {
+            transform: scale(1.5);
+        }
+        .scalc2 {
+            transform: scaleX(0.5);
+        }
+        .scalc3 {
+            transform: scaleY(0.5);
+        }
+
+        .rotate {/*360도 회전 : 50도로 돌리면*/
+            transform: rotate(50deg);
+        }
+        .rotateX {/*360도 회전 : 50도로 돌리면*/
+            transform: rotateX(1deg);
+        }
+        .parOunline {
+            perspective: 1px;
+        }
+        
+        .skew {
+            transform: skew(15deg ,25deg);
+        }
+        .skew1 {
+            transform: skewX(25deg);
+        }
+        .skew2 {
+            transform: skewY(25deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="outline">
+        <div class="box translate"></div>
+    </div>
+    <div class="outline">
+        <div class="box translate1"></div>
+    </div>
+    <div class="outline">
+        <div class="box translate2"></div>
+    </div>
+    <div class="outline">
+        <div class="box translate3"></div>
+    </div>
+    <div class="outline">
+        <div class="box translate4"></div>
+    </div>
+    <div class="outline">
+        <div class="box translate5"></div>
+    </div>
+
+    <h1>scale</h1>
+    <div class="outline">
+        <div class="box scalc"></div>
+    </div>
+    <div class="outline">
+        <div class="box scalc1"></div>
+    </div>
+    <div class="outline">
+        <div class="box scalc2"></div>
+    </div>
+    <div class="outline">
+        <div class="box scalc3"></div>
+    </div>
+    <h1>rotate</h1>
+    <div class="outline">
+        <div class="box rotate"></div>
+    </div>
+    <div class="outline">
+        <div class="box rotateX"></div>
+    </div>
+    <div class="outline parOunline">
+        <div class="box rotateX"></div>
+    </div>
+    <h1>skew</h1>
+    <div class="outline">
+        <div class="box skew"></div>
+    </div>
+    <div class="outline">
+        <div class="box skew1"></div>
+    </div>
+    <div class="outline">
+        <div class="box skew2"></div>
+    </div>
+</body>
+</html>

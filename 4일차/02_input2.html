@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><!--value : 입력한 창은 표시가 남-->
+    <input type="text" name="" id="user_id" value="Hello World">
+
+    <script>
+        //함수();알림창은 뜨지만 //console창 오류 
+        function 함수() {
+            alert('함수 알림창');
+            console.log(dd);
+        }
+        //함수();알림창은 뜨지만 //console창 오류 
+        //dom
+        // head 에 넣을시 console창 오류
+        //getElementById가 function 보다 아래에 있기 때문에
+        let dd = document.getElementById('user_id').value;
+        console.log(dd);
+        함수();
+    </script>
+</body>
+</html>

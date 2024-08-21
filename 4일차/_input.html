@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="user_id">
+
+    <script>
+        //javascript의 변수 타입
+        //var, let, const // 데이터 타입 아님
+        //변수 타입 변수명 = 값
+        var v1 = 'banana';
+        console.log(v1);
+
+        var v1 = 'epple';
+        let le1 = 'banana';
+        // let le1 = 'epple'; let은 재선언을 방지 해준다.
+
+        // console.log(); //console, F12 개발자도구에서 log 보기 용
+
+        // const :상수 , 변하지 않는 값
+        const con1 ='상수'; 
+        console.log(con1);
+
+        //null, undefined.
+        // null: 값이 없다.
+        // undefined: 값이 할당 되지 않은 상태.
+         let yy;
+        console.log(yy);
+        let dd = document.getElementById('user_id').value;
+        console.log(dd);
+
+        //변수 타입3개 var, let, const
+        let str = 'abc';
+        typeof(str); // 데이터 타입을 알려주는 친구.
+        console.log('1','2'); // 출력시 12가 나옴
+        console.log(typeof(str),str);
+
+        // 데이터 타입 변환.
+        let num = '100'*1;
+        console.log(typeof(num), num);
+
+        //Number(); 숫자 인식
+        console.log(typeof(Number('1.2')),Number('1.2'));
+
+        //parseInt(); 숫자 인식 (정수)
+        console.log(typeof(parseInt('1.2')),parseInt('1.2'));
+
+
+        //parseFloat(); 숫자 인식 (소수 점 나옴);
+        console.log(typeof(parseFloat('1')),parseFloat('1'));
+
+        //String(); 문자로 인식.
+        console.log(typeof(String(100)),String(100));
+
+        //논리 (true, False)
+        console.log(typeof(Boolean('true')),Boolean('true'));
+        
+        // let str = 123;//숫자로 인식
+        // let str = abc;//문자로 인식
+        // 10가지 일 중에서 1가지 실수를 하면 죄인
+</script>
+</body>
+</html>

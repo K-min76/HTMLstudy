@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head><!--input 창 3개. 첫번째 값 + 두번째 값 = 결과 값. 
+버튼.-->
+<body>
+    <!--value 사용자가 입력하는 공간. 값-->
+      <input type="text" name="" id="u" >
+      <input type="text" name="" id="vs" >
+      <input type="button" value="더하기" onclick="클릭()">
+      <input type="text"  id="a" value="result">
+      
+
+    <script>
+        let dd = document.getElementById('u');
+        let aa = document.getElementById('vs');
+        let cc = document.getElementById('a');
+        function 클릭() {
+            // alert(cc.value);
+            cc.value = parseInt(dd.value)+parseInt(aa.value)
+        }
+         
+        //document.getElementById('u').value;
+        //console.log(dd);
+
+       
+        //document.getElementById('vs').value;
+        //console.log(aa);
+        
+       
+        console.log(cc);
+       
+
+        
+    </script>
+</body>
+</html>
