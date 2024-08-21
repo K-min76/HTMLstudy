@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="num1" value="">
+    <input type="text" id="num2" value="">
+    <input type="button" value="전송" onclick="clickEvent()">
+    <input type="text" id="num3" value="">
+
+    <script>
+        let a = document.getElementById('num1');
+        let b = document.getElementById('num2');
+        let cc = document.getElementById('num3');
+        
+        function clickEvent() {
+            
+            let cc = parseInt(a.value)+parseInt(b.value);
+            document.getElementById('num3').value = cc;
+        }
+//value 는 나타내는 값
+//document.getElementById 는 html에서 가지고 오는것
+    </script>
+</body>
+</html>
