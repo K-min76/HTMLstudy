@@ -12,14 +12,14 @@
     <input type="text" id="num3" value="">
 
     <script>
-        let a = document.getElementById('num1');
-        let b = document.getElementById('num2');
-        let cc = document.getElementById('num3');
+        let a = document.getElementById('num1'); //document.getElementById('num'); = html 에서 id 명인 num1 을 가지고 온걸 let 변수로 a 인 변수 명으로 지정
+        let b = document.getElementById('num2'); //document.getElementById('num'); = html 에서 id 명인 num1 을 가지고 온걸 let 변수로 b 인 변수 명으로 지정
         
-        function clickEvent() {
+        function clickEvent() { // function (함수호출 : 메소드) clickEvent()인 버튼을 클릭하면 이벤트가 발생
             
-            let cc = parseInt(a.value)+parseInt(b.value);
-            document.getElementById('num3').value = cc;
+            let cc = parseInt(a.value)+parseInt(b.value); // 버튼을 클릭하면 parseInt(a.value) id인 num1을 a로 나타낸것을 a인 (parseInt)숫자로 변경 같이 b도 변경 서로 더한것을 
+                                                          // let cc 로 변수명으로 지정
+            document.getElementById('num3').value = cc;   // 더한걸 document.getElementById('num3') id num3 에 나타냄 무엇을? .value = cc; 더한값을 num3로
         }
 //value 는 나타내는 값
 //document.getElementById 는 html에서 가지고 오는것
