@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라디오 계산기</title>
+</head>
+<body>
+    <h1>라디오 계산기</h1>
+    <input type="text" name="" id="num1">
+    <input type="radio" name="op" value="+" checked> +
+    <input type="radio" name="op" value="-"> -
+    <input type="radio" name="op" value="*"> *
+    <input type="radio" name="op" value="/"> /
+    <input type="text" name="" id="num2">
+    <input type="button" value="선택" onclick="clickEvent()">
+    <input type="text" name="" id="result" value="">
+
+    <script>
+        function clickEvent() {
+            let num1 = document.getElementById('num1');
+            let ra = document.getElementsByName('op');
+            console.log(ra);
+            let num2 = document.getElementById('num2');
+            let result = document.getElementById('result');
+
+            for(i = 0; i < ra.length; i++) {
+                if(ra[i].checked ) {
+                    console.log(ra[i].value);
+                    if(ra[i].value == '+') {
+                        result.value = Number(num1.value) + Number(num2.value);
+                    }else if(ra[i].value == '-') {
+                        result.value = Number(num1.value) - Number(num2.value);
+                    }else if(ra[i].value == '*') {
+                        result.value = Number(num1.value) * Number(num2.value);
+                    }else if(ra[i].value == '/') {
+                        result.value = Number(num1.value) / Number(num2.value);
+                    }else {
+                        console.log('NO')
+                    }
+                    document.getElementById('result').value 
+                
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>

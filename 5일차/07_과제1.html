@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+        
+            border-collapse: collapse; 
+            width: 50%; 
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px; 
+            text-align: center; 
+        }
+        th {
+            background-color: #a9bdbe; 
+        }
+        
+        .long-text {
+            width: 200px;
+            text-align: center 
+        }
+        .text {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    
+    
+
+    <h2>회원 기본 정보</h2>
+    <table>
+        <thead>
+            <tr>
+                <td colspan="2">회원 기본 정보</td>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="long-text">아이디:</td>
+                <td class="text"><input type="text" id="id" >4~12자리의 영문 대소문자와 숫자로만 입력</td>
+            </tr>
+            <tr>
+                <td class="long-text">비밀번호:</td>
+                <td class="text"><input type="text" id="password" >4~12자리의 영문 대소문자와 숫자로만 입력</td>
+            </tr>
+            <tr>
+                <td class="long-text">비밀번호 확인:</td>
+                <td class="text"><input type="text" id="password2" ></td>
+            </tr>
+            <tr>
+                <td class="long-text">메일 주소:</td>
+                <td class="text"><input type="text" id="eml" >예) id@domain.com</td>
+            </tr>
+            <tr>
+                <td class="long-text">이름:</td>
+                <td class="text"><input type="text" id="name" ></td>
+            </tr>
+            <tr>
+                <td colspan="2">개인 신상 정보</td>
+                
+            </tr>
+            <tr>
+                <td class="long-text">주민등록번호:</td>
+                <td class="text"><input type="text" id="Number" >예) 1234561234567</td>
+            </tr>
+            <tr>
+                <td class="long-text">생일:</td>
+                <td class="text"><input type="text" id="Birth" >년
+                    <select id="selectCheck">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>월
+                    <select id="selectCheck2">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>일</td>
+                
+            </tr>
+            <tr>
+                <td class="long-text">관심분야:</td>
+                <td class="text"><input type="checkbox" name="checkeds" value="인터넷">수영
+                    <input type="checkbox" name="checkeds" value="독서">독서
+                    <input type="checkbox" name="checkeds" value="영화감상">자전거
+                    <input type="checkbox" name="checkeds" value="음악감상">게임
+                    <input type="checkbox" name="checkeds" value="낚시">낚시</td>
+                    
+            </tr>
+            <tr>
+                <td class="long-text">자기소개:</td>
+                <td class="text"><input type="text" id="my" ></td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="button" value="회원 가입" onclick="clickEvent()">
+    <input type="reset" value="다시 입력" onclick="clickEvent2()" >
+    
+
+    
+    <script>
+        
+        function clickEvent() {
+           
+           let id = document.getElementById('id').value;
+           let password = document.getElementById('password').value;
+           let password2 = document.getElementById('password2').value;
+           let eml = document.getElementById('eml').value;
+           let Number = document.getElementById('Number').value;
+           let Birth = document.getElementById('Birth').value;
+           let selectCheck = document.getElementById('selectCheck').value;
+           let selectCheck2 = document.getElementById('selectCheck2').value;
+           let checkeds = document.getElementsByName('checkeds').value
+           let my = document.getElementById('my').value;
+           
+           let onclick = 0;
+
+
+           let idPattern = /^[A-Za-z0-9]+$/;
+           if( !idPattern.test(id) || id.length < 4 || id.length > 12){
+                alert('id :4~12자리의 영문 대소문자와 숫자로만 입력해주세요.')
+                document.getElementById('id').value = ""
+                document.getElementById('id').focus();
+                return;
+           }
+           let passwordPattern = /^[A-Za-z0-9]+$/;
+           if(!passwordPattern.test(password)||password.length < 4 || password.length > 12){
+                alert('password : 4~12자리의 영문 대소문자와 숫자로만 입력해주세요.')
+                document.getElementById('password').value = ""
+                document.getElementById('password2').value = ""
+                document.getElementById('password').focus();
+                return;
+           }
+           if(password != password2 ){
+               alert('password2 : password와 다릅니다.')
+               document.getElementById('password2').value = ""
+               document.getElementById('password2').focus();
+                return;
+           }
+           
+           let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+           if(!emlPattern.test(eml)){
+            alert('eml : @ 추가해서 다시 입력해주세요')
+            document.getElementById('eml').value = ""
+            document.getElementById('eml').focus();
+                return;
+           }
+           if(name == "") {
+            alert('name : 다시 입력해주세요')
+            document.getElementById('name').value = ""
+            document.getElementById('name').focus();
+                return;
+           }
+           let NumberPattern = /^[0-9]+$/;
+           if(Number.length > 13 || NumberPattern.test(Number)) {
+            alert('다시')
+            document.getElementById('Number').value = ""
+            document.getElementById('Number').focus();
+                return;
+           }
+           
+
+        }
+        
+        
+    </script>
+</body>
+</html>

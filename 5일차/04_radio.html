@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라디오</title>
+</head>
+<body>
+    <h1>좋아하는국가는?</h1>
+    <input type="radio" name="na" id="" value="대한민국">대한민국
+    <input type="radio" name="na" id="" value="일본">일본
+    <input type="radio" name="na" id="" value="러시아">러시아
+    <input type="radio" name="na" id="" value="캐나다">캐나다
+    </br>
+    <input type="button" value="선택" onclick="result()">
+
+    <script>
+        function result() {
+            // getElementsByName name의 복수 하나의 이름을 가지고 있는 여러가지를 가지고 올때 쓰는 명령어
+            let ra = document.getElementsByName('na');
+            console.log(ra);
+
+            for(let i = 0; i < ra.length; i++) {
+                if(ra[i].checked) {
+                console.log(ra[i]);
+                console.log(ra[i].checked);
+                console.log(ra[i].value);
+                }
+               
+            }
+            
+        }
+    </script>
+</body>
+</html>
