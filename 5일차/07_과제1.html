@@ -67,7 +67,7 @@
             </tr>
             <tr>
                 <td class="long-text">주민등록번호:</td>
-                <td class="text"><input type="text" id="Number" >예) 1234561234567</td>
+                <td class="text"><input type="text" id="number2" >예) 1234561234567</td>
             </tr>
             <tr>
                 <td class="long-text">생일:</td>
@@ -123,7 +123,8 @@
             </tr>
             <tr>
                 <td class="long-text">관심분야:</td>
-                <td class="text"><input type="checkbox" name="checkeds" value="인터넷">수영
+                <td class="text">
+                    <input type="checkbox" name="checkeds" value="인터넷">수영
                     <input type="checkbox" name="checkeds" value="독서">독서
                     <input type="checkbox" name="checkeds" value="영화감상">자전거
                     <input type="checkbox" name="checkeds" value="음악감상">게임
@@ -149,11 +150,11 @@
            let password = document.getElementById('password').value;
            let password2 = document.getElementById('password2').value;
            let eml = document.getElementById('eml').value;
-           let Number = document.getElementById('Number').value;
-           let Birth = document.getElementById('Birth').value;
-           let selectCheck = document.getElementById('selectCheck').value;
-           let selectCheck2 = document.getElementById('selectCheck2').value;
-           let checkeds = document.getElementsByName('checkeds').value
+           let name = document.getElementById('name').value;
+           let number1 = document.getElementById('number2').value;
+           let birth = document.getElementById('Birth').value;
+           let selectCheck = document.getElementsByName('checkeds');
+           let result = new Array();
            let my = document.getElementById('my').value;
            
            let onclick = 0;
@@ -182,7 +183,7 @@
            }
            
            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-           if(!emlPattern.test(eml)){
+           if(!emailPattern.test(eml)){
             alert('eml : @ 추가해서 다시 입력해주세요')
             document.getElementById('eml').value = ""
             document.getElementById('eml').focus();
@@ -194,17 +195,55 @@
             document.getElementById('name').focus();
                 return;
            }
-           let NumberPattern = /^[0-9]+$/;
-           if(Number.length > 13 || NumberPattern.test(Number)) {
+           let numberPattern = /^[0-9]+$/;
+           if(number1.length != 13 || !numberPattern.test(number1)) {
             alert('다시')
-            document.getElementById('Number').value = ""
-            document.getElementById('Number').focus();
-                return;
+            document.getElementById('number2').value = ""
+            document.getElementById('number2').focus();
+            
+            return;
            }
-           
+           let birthPattern = /^[0-9]+$/;
+           if(birth.length != 4 || !birthPattern.test(birth)) {
+            alert('다시')
+            document.getElementById('birth').value = ""
+            document.getElementById('birth').focus();
+            return;
+           }
 
-        }
+           for(var i = 0; i < selectCheck.length; i++) {
+            console.log(i)
+                if(selectCheck[i].checked) {
+                    result.push(selectCheck[i].value); // 배열 삽입
+                    console.log(selectCheck[i].checked);
+                    console.log(selectCheck[i].value);
+
+                }
+            }
+            // if(selectCheck == 0) {
+            //     alert('선택 된 값이 없습니다.');
+            //     // 함수 강제 종료
+            //     return;
+            // }
+
+            if(result.length == 0) {
+                alert('선택 된 값이 없습니다.');
+                // 함수 강제 종료s
+                return;
+            }
+            
+            alert(id)
+            alert(password)
+            alert(password2)
+            alert(eml)
+            alert(name)
+            alert(number1)
+            alert(birth)
+            alert(selectCheck)
+            alert(my)
+
         
+        }
         
     </script>
 </body>

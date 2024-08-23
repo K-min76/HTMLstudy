@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query</title>
+    <style>
+        .border {
+            border: 1px solid #000;
+        }
+        .padding {
+            padding: 10px;
+        }
+        .border:nth-child(1) {
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="text" class="border padding">
+    <input type="text" class="border padding">
+
+    <script>
+        // selector 를 호출.
+        // document.querySelectorAll
+
+        let s1 = document.querySelectorAll('.border');
+        let s2 = document.querySelectorAll('border:nth.chlid(1)');
+        console.log(s2);
+        let s3 = document.querySelectorAll('input');
+        console.log(s3);
+
+        //querySelectorA11에서 검색된 것 중에서 제일처음 검색된 대상 하나.
+        let a1 = document.querySelector('border');
+
+
+    </script>
+</body>
+</html>

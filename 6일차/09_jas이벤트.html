@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            /* view width : 현재 화면 너비의 100% */
+            width: 100vw; 
+
+            /* view height : 현재 화면 높이 100% */
+            height: 100vh;
+
+            /* flex는 기본적으로 우측으로 정렬시킴 */
+            display: flex; 
+
+            /* 정렬 방향 (row인지, column인지) */
+            /* column-reverse, row-reverse */
+            flex-direction: row;
+
+            /* 크기에 따라 자동으로 개행 시킴 */
+            flex-wrap: wrap;
+
+            /* flex-start : 좌측정렬 */
+            /* flex-end : 우측정렬 */
+            /* center : 가운데정렬 */
+            /* space-between : 적당히 정렬 */
+            justify-content: space-between;
+
+            /* 한줄을 기준으로 정렬 */
+            align-items: flex-start;
+
+            align-self: flex-start;
+        }
+
+        .box {
+            margin: 6px;
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+            background-color: steelblue;
+        }
+        .item1 {
+            order: 1;
+        }
+        .item2 {
+            order: 2;
+        }
+        .item3 {
+            order: 3;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <div class="box" onclick="over()">1</div>
+    <div class="box" ondblclick="over()">2</div>
+    <div class="box" onmousedown="over()">3</div>
+    <div class="box" onmouseup="over()">4</div>
+    <div class="box" onmousemove="cons()">5</div>
+    <div class="box" onmouseover="cons()">6</div>
+    <div class="box" onmouseout="cons()">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+
+    <input type="text" onkeydown="input1(e)">
+    <script>
+        function over() {
+            alert('반응');
+        }
+        function cons() {
+            console.log('check');
+        }
+        function input1(e) {
+            console.log(e);
+
+        }
+    </script>
+
+</body>
+</html>

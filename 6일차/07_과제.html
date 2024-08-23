@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f8;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #outputTable {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            
+            border-collapse: collapse;
+           
+            margin: 20px 0;
+           
+        }
+        th, td {
+            border: 1px solid #ccc;
+            
+            padding: 8px;
+           
+            text-align: left;
+            
+            color: #333;
+            
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+           
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+            
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="number" id="baseNumber" placeholder="단 수 입력">
+        <input type="number" id="limitNumber" placeholder=" 출력 문">
+        <button onclick="generateTable()">결과 출력</button>
+        <div id="outputTable"></div>
+    </div>
+
+    <script>
+        function generateTable() {
+            let baseNumber = document.getElementById('baseNumber').value; 
+            let limitNumber = document.getElementById('limitNumber').value; 
+
+           
+            baseNumber = parseFloat(baseNumber);
+            limitNumber = parseFloat(limitNumber);
+
+           
+            if (isNaN(baseNumber) || isNaN(limitNumber)) {
+                return;
+            }
+            let str = '';
+          
+            for (let j = 1; j <= limitNumber; j++) {
+                str += baseNumber + ' X ' + j + ' = ' + (baseNumber * j) + '<br>';
+            }
+           
+            document.getElementById('outputTable').innerHTML = str;
+        }
+    </script>
+    </script>
+</body>
+</html>

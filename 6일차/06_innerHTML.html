@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="클릭" onclick="clickEvent()">
+    <div id="reset">
+        <span class="color">Hello world</span>
+    </div>
+    <script>
+
+        function clickEvent() {
+            let str = '';
+            for(let i = 0; i < 10; i++) {
+                str += '<span class="color">Hello world ' + i+ '</span><br/>'
+            }
+            document.getElementById('reset').innerHTML = str;
+        }
+    </script>
+    
+</body>
+</html>
