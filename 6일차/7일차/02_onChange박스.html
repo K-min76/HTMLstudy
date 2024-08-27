@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <select id="menu01" onchange="box()">
+        <option value="coffee">커피</option>
+        <option value="cake">케이크</option>
+    </select>
+    <select id="menu02">
+       
+        
+    </select>
+    <script>
+        box();
+        function box() {
+            let menu01 = document.getElementById('menu01');
+            
+            if(menu01.value == 'coffee'){
+                str = ' <option value="coffee">아메리카노</option> '
+                     +   ' <option value="coffee">카라멜마끼아또</option> '
+                     +   ' <option value="coffee">카페라떼</option> '
+                      +  ' <option value="coffee">자바칩크라페</option> ';
+            }
+            else if(menu01.value == 'cake'){
+                str = ' <option value="cake">티라미수케이크</option> '
+                      +  ' <option value="cake">뉴욕치즈케이크</option> '
+                      +  ' <option value="cake">레드벨벳케이크</option> '
+                      +  ' <option value="cake">화이트생크림롤케이크</option> ';
+            }
+
+            document.getElementById('menu02').innerHTML = str;
+
+            
+
+        }
+
+    </script>
+</body>
+</html>
