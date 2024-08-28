@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" name="" id="num1">
+    <input type="text" name="" id="num2">
+
+    <input type="button" value="계산" onclick="click()">
+    
+    <script>
+        //이 함수를 선언식에서 표현식으로 변경. ES6문법으로 변경.
+        let click = () => {
+            let num1 = document.getElementById('num1').value;
+            let num2 = document.getElementById('num2').value;
+
+        
+            let obj = new Object();
+            obj.plus = Number(num1)+Number(num2);
+            obj.minus = num1- num2 ;
+            obj.mul = num1*num2;
+            obj.div =num1/num2;
+            obj.div = (num1 > num2)?num1/num2 : num1/num2;
+
+            console.log(obj);
+        }
+    </script>
+</body>
+</html>

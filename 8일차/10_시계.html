@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            margin: 0;
+        }
+
+        .box {
+            border: 2px solid rgb(13, 87, 237);
+            border-color: rgb(13, 87, 237);
+            padding: 300px;
+            text-align: center;
+            
+        }
+        
+    </style>
+</head>
+<body class="color">
+    <div class="container">
+    <div class="box">
+    <input type="button" value="시작" onclick="startclick()">
+    <input type="button" value="멈춰" onclick="clickStop()">
+    <input type="button" value="재시작" onclick="clickgo()">
+
+
+
+    <div  id="divClock" class="clock"></div>
+
+
+    <script cllang="JavaScript">
+        var start = new Date();
+        var click1 = new Date();
+
+        function showClock() {
+            var crrDate = new Date();
+            var divClock = document.getElementById("divClock");
+            var since = Math.ceil((crrDate-start)/1000);
+
+            var msg = "현재 시간 :" + crrDate.getHours() + "시";
+            msg += crrDate.getMinutes() + "분";
+            msg += crrDate.getSeconds() + "초\n";
+            msg += "접속 후 " + since + "초 경과";
+
+            divClock.innerText = msg;
+
+            setTimeout(showClock, 1000);
+        }
+
+        function startclick() {
+            let random = Math.ceil(Math.random()*10);
+            setTimeout(function() {
+                start = new Date();
+            }, random*500);
+        }
+
+        function clickStop() {
+            click1 = new Date();
+            var result = click1-start;
+            console.log(result);
+        }
+
+    </script>
+</body>
+</html>

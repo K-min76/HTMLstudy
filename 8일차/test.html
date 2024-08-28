@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var PIC = "/img/cookie.png"; // 이미지 경로를 PIC 변수에 저장
+
+        function insertImage() {
+            var img = document.createElement("img");
+            img.src = PIC; // PIC 변수를 사용해 이미지 경로 설정
+            img.alt = "쿠키 이미지";
+            img.width = 300;
+
+            document.body.appendChild(img);
+        }
+    </script>
+</head>
+<body>
+    <h1>PIC 변수로 쿠키 이미지 삽입</h1>
+    <button onclick="insertImage()">이미지 삽입</button>
+</body>
+</html>

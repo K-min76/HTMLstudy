@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>음식 사진</title>
+    <style>
+
+
+        /** main tool */
+        .picMain {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /** 음식사진 메인 */
+        .mainPic {
+            width: 400px;
+            height: 300px;
+        }
+
+        /** 음식사진 보조 **/
+        .suvPic {
+            width: 100%;
+            height: 100vh;
+        }
+
+        /** 갤러리 스타일 */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .photo {
+            width: calc(33% - 40px);
+            /* 너비 설정, 마진을 고려한 계산 */
+            margin: 20px;
+            height: 200px;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        /** 버튼 공간 */
+        .btn_area {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            height: 70px;
+        }
+
+        .btn01 {
+            margin: 15px;
+            padding: 15px;
+            height: 30px;
+            border-radius: 15px;
+            font-size: 25px;
+            font-weight: bold;
+            align-items: center;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <input type="button" value="전체" onclick="clickEvent()">
+    <input type="button" value="케이크" onclick="clickcake()">
+    <input type="button" value="쿠키" onclick="clickcookie()"> -->
+
+    <div class="picMain">
+        <div class="mainPic" id="mainpicture"></div>
+        <div class="suvPic">
+            <div class="btn_area">
+                <div class="btn01" onclick="result('all')">전체</div>
+                <div class="btn01" onclick="result('cookie')">쿠키</div>
+                <div class="btn01" onclick="result('cake')">케이크</div>
+            </div>
+            <!-- 사진첩 갤러리 -->
+            <div class="gallery" id="gel">
+                <div class="photo" id="cookie" img src="/img/cookie.png">사진 1</div>
+                <div class="photo" id="cake" img src="/img/cake.png">사진 2</div>
+                <div class="photo" id="cookie" img src="/img/cookie2.png">사진 3</div>
+                <div class="photo" id="cookie" img src="/img/cookie3.png">사진 4</div>
+                <div class="photo" id="cake" img src="/img/cake2.png">사진 5</div>
+                <!-- 추가 사진 필요 시 여기에 더 추가 -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const pic = {
+            list: [
+                {
+                    food : 'cookie',
+                    picture : '<img src="/img/cookie.png">'
+                },
+                {
+                    food : 'cake',
+                    picture : '<img src="/img/cake.png">'
+                },
+                {
+                    food : 'cookie',
+                    picture : '<img src="/img/cookie2.png">'
+                },
+                {
+                    food : 'cookie',
+                    picture : '<img src="/img/cookie3.png">'
+                },
+                {
+                    food : 'cake',
+                    picture : '<img src="/img/cake2.png">'
+                }
+            ]
+        }
+
+        let list = pic.list;
+
+        function result(food) {
+            let str = '';
+            for(let i = 0; i < list.length; i++){
+                if(food == list[i].food || food == 'all'){
+                     str += '<div class="photo" onclick = "pclick('+i+')">'+ list[i].picture +'</div>'
+                     document.getElementById('gel').innerHTML = str;
+                    }
+            }
+        }
+
+        function pclick(i){
+            let str2 = '';
+
+            str2 += list[i].pic;
+            document.getElementById('mainpicture').innerHTML = str2;
+        }
+
+        // const pic = [{pic:'', category: 'cake'},
+        // {pic:'' ,category: 'cake'},
+        // {pic:'' ,category: 'cookie'},
+        // {pic:'', category: 'cookie'},
+        // {pic:'', category: 'cookie'}
+        // ];
+    </script>
+</body>
+</html>
