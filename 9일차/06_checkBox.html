@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkBox</title>
+</head>
+<body>
+    
+    <h1>취미</h1>
+    <input type="checkbox" name="hobby" id="hobby1" value="독서">독서<label for="hobby1"></label>
+    <input type="checkbox" name="hobby" id="hobby2" value="게임">게임<label for="hobby2"></label>
+    <input type="checkbox" name="hobby" id="hobby3" value="영화">영화<label for="hobby3"></label>
+    <input type="checkbox" name="hobby" id="hobby4" value="탁구">탁구<label for="hobby4"></label>
+    <input type="checkbox" name="hobby" id="hobby5" value="자전거">자전거<label for="hobby5"></label>
+    <input type="checkbox" name="hobby" id="hobby6" value="수영">수영<label for="hobby6"></label>
+    <input type="button" value="값 확인하기" onclick="send()">
+    <input type="button" value="값 확인하기2" onclick="send2()">
+    <input type="button" value="값 확인하기3(난이도 있음)" onclick="send3()"><br/>
+    <input type="button" value="모두 선택" onclick="allcheck()">
+    <input type="button" value="모두 해제" onclick="zerocheck()">
+
+
+
+    <script src="/9일차/01_j.js"></script>
+    <script>
+        // sey
+        function send() {
+            let radio = $('input[name="hobby"]');
+            //name은 태그를 통해서 불러옵니다.
+            //위의 방법이 싫다, 그러면 class 를 임시로 저장
+            //$('.inputRadio') => inputRadio 라는 class 가진 모든 것을 불러오기
+
+
+            for(let i = 0; i < radio; i++) {
+                //선택 값을 확인 하고 싶습니다.
+                if(hobby[i].checked == true)
+                {
+                    console.log('선택 된 값: ', hobby[i].value);
+                }
+            }
+
+        }
+        //가지고 오는 방법2
+        function send2() {
+            let hobby = $('input[name="hobby"]:checked'); // check 된 목록만 갖고 온다.
+            let length = $('input[name="hobby"]:checked').length;  //체크 된 개수 0=> 선택
+
+            for(let i = 0; i <hobby.length; i++) {
+                console.log('선택된value ' ,hobby[i].value);
+            }
+        }
+
+        function send3() {
+            //하나라도 체크되었는지 확인 여부
+            // 여기 group 중에서, 한개라고 check 가 되었을 떄 true.ㄴ
+            let check = $('input[name="hobby"]')
+
+
+
+
+
+
+            //forEach
+            // function(index) => index => { }
+            $('input[name="hobby"]').each(index =>{
+                // 자신의 행이 소속 된 
+                // 자기자신이 check 여부 판단.
+                if($(this).is('checked')) {
+                    console.log($(this).val());
+                }
+            })
+        }
+        //체크 모두 선택
+        function allcheck() {
+            $('input[name="hobby"]').prop('check', true);
+        }
+        //체크 모두 해제
+        function zerocheck() {
+            $('input[name="hobby"]').prop('check', false);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>좋아하는 계절</title>
+</head>
+<body>
+    <h1>좋아하는 계절</h1>
+    <input type="radio" name="season" id="spring">봄
+    <input type="radio" name="season" id="summber">여름
+    <input type="radio" name="season" id="fail">가을
+    <input type="radio" name="season" id="winter">겨울
+    <input type="button" value="전송1" onclick="send()">
+    <input type="button" value="전송2" onclick="send2()">
+    <input type="button" value="전송3" onclick="send3()">
+
+    <script src="/9일차/01_j.js"></script>
+
+    <script>
+        function send() {
+            let radio = document.getElementsByName('season'); // 
+            //무엇이 선택 되었는지 확인하고 싶습니다.
+            for(let i = 0; i < radio; i++) {
+                //선택 값을 확인 하고 싶습니다.
+                if(radio[i].checked == true)
+                {
+                    console.log('선택 된 값: ', radio[i].value);
+                }
+            }
+        }
+        //jquery 방법 
+        function send2() {
+            let radio = $('input[name="season"]');
+            //name은 태그를 통해서 불러옵니다.
+            //위의 방법이 싫다, 그러면 class 를 임시로 저장
+            //$('.inputRadio') => inputRadio 라는 class 가진 모든 것을 불러오기
+
+
+            for(let i = 0; i < radio; i++) {
+                //선택 값을 확인 하고 싶습니다.
+                if(radio[i].checked == true)
+                {
+                    console.log('선택 된 값: ', radio[i].value);
+                }
+            }
+
+        }
+
+        function send3() {
+            //input'input[name="season"]: 
+            let result = $('input[name="season"]:checked').val();
+            console.log('선택된 결과 :', result);
+        }
+    </script>
+
+
+    
+</body>
+</html>
